@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <title>Modern Authentication Web Platform</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-tr from-blue-700 to-cyan-400 text-white"
+  >
+    <header
+      class="flex justify-between items-center px-6 py-4 bg-black/15 relative"
+    >
+      <a href="./Dashboard.html">
+        <h1 class="font-bold text-2xl sm:text-3xl md:text-4xl text-white">
+          LOGO
+        </h1>
+      </a>
+
+      <button class="block sm:hidden text-white focus:outline-none text-3xl">
+        ☰
+      </button>
+
+      <nav
+        class="hidden absolute top-full left-0 w-full bg-black/80 text-white flex-col sm:flex sm:flex-row sm:items-center sm:bg-transparent sm:static sm:w-auto transition-all z-50"
+      >
+        <ul
+          class="flex flex-col sm:flex-row gap-4 sm:gap-6 text-center p-4 sm:p-0 text-[#001747] font-bold"
+        >
+          <li>
+            <a href="#" class="hover:text-[#1549b9] transition-all">About</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-[#1549b9] transition-all">Service</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-[#1549b9] transition-all">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-[#1549b9] transition-all">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="flex">
+      <div
+        class="flex-col sm:flex fixed sm:static top-0 left-0 w-64 sm:w-[15%] h-auto justify-between bg-[#14213a]/80 backdrop-blur-md hidden z-50 transition-all"
+      >
+        <div class="flex flex-col gap-4 p-4 font-semibold text-center">
+          <a
+            href="./Dashboard.html"
+            class="py-2 hover:bg-[#001747]/80 transition"
+            >Dashboard</a
+          >
+          <a href="#" class="py-2 hover:bg-[#001747]/80 transition">Product</a>
+          <a href="#" class="py-2 hover:bg-[#001747]/80 transition"
+            >Order List</a
+          >
+          <a href="#" class="py-2 hover:bg-[#001747]/80 transition"
+            >Analytics</a
+          >
+          <a href="#" class="py-2 hover:bg-[#001747]/80 transition">Stock</a>
+          <a href="#" class="py-2 hover:bg-[#001747]/80 transition"
+            >Total Order</a
+          >
+          <a href="#" class="py-2 hover:bg-[#001747]/80 transition">Team</a>
+          <a href="#" class="py-2 hover:bg-[#001747]/80 transition">Massages</a>
+          <a href="#" class="py-2 hover:bg-[#001747]/80 transition">Favorets</a>
+          <a
+            href="./profile_setting.html"
+            class="py-2 hover:bg-[#001747]/80 transition"
+            >Setting</a
+          >
+        </div>
+        <div class="flex flex-col gap-4 p-4 font-semibold text-center">
+          <a
+            href="./landing.html"
+            class="mt-4 py-2 hover:bg-[#001747]/80 transition"
+            >Logout</a
+          >
+        </div>
+      </div>
+
+      <main class="flex-1 p-6 sm:ml-0 ml-0 w-full">
+        <h1 class="text-3xl font-bold mb-4">Dashboard Overview</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white rounded-xl shadow p-5">
+            <h2 class="text-lg font-semibold text-gray-700">Total Orders</h2>
+            <p class="text-2xl font-bold text-blue-600">120</p>
+          </div>
+          <div class="bg-white rounded-xl shadow p-5">
+            <h2 class="text-lg font-semibold text-gray-700">New Users</h2>
+            <p class="text-2xl font-bold text-green-600">35</p>
+          </div>
+          <div class="bg-white rounded-xl shadow p-5">
+            <h2 class="text-lg font-semibold text-gray-700">Revenue</h2>
+            <p class="text-2xl font-bold text-purple-600">$5,800</p>
+          </div>
+          <div class="bg-white rounded-xl shadow p-5">
+            <h2 class="text-lg font-semibold text-gray-700">Feedback</h2>
+            <p class="text-2xl font-bold text-red-500">23</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-6 mt-10">
+          <h2 class="text-xl font-bold text-gray-700 mb-4">Monthly Orders</h2>
+          <canvas id="ordersChart" class="w-full h-64"></canvas>
+        </div>
+      </main>
+    </div>
+
+    <footer
+      class="text-center text-sm text-white/70 py-8 border-t border-white/20"
+    >
+      © 2025
+      <span class="font-semibold">Modern Authentication Web Platform</span>. All
+      rights reserved.
+    </footer>
+
+    <script>
+      const ctx = document.getElementById("ordersChart").getContext("2d");
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+          datasets: [
+            {
+              label: "Orders",
+              data: [30, 45, 60, 40, 80, 70],
+              backgroundColor: "rgba(59, 130, 246, 0.5)",
+              borderColor: "rgba(59, 130, 246, 1)",
+              borderWidth: 1,
+              borderRadius: 6,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

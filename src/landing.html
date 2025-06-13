@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <title>Modern Authentication Web Platform</title>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-tr from-blue-700 to-cyan-400 bg-no-repeat bg-cover bg-center"
+  >
+    <header
+      class="flex justify-between items-center px-6 py-4 bg-black/15 relative"
+    >
+      <a href="./Dashboard.html">
+        <h1 class="font-bold text-2xl sm:text-3xl md:text-4xl text-white">
+          LOGO
+        </h1>
+      </a>
+
+      <button class="block sm:hidden text-white focus:outline-none text-3xl">
+        ☰
+      </button>
+
+      <nav
+        class="hidden absolute top-full left-0 w-full bg-black/80 text-white flex-col sm:flex sm:flex-row sm:items-center sm:bg-transparent sm:static sm:w-auto transition-all z-50"
+      >
+        <ul
+          class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center p-4 sm:p-0 text-[#001747] font-bold"
+        >
+          <li>
+            <a href="#" class="hover:text-[#1549b9] transition-all">About</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-[#1549b9] transition-all">Service</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-[#1549b9] transition-all">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-[#1549b9] transition-all">Contact</a>
+          </li>
+          <li>
+            <a
+              href="./login.html"
+              class="px-5 py-2 rounded-2xl text-white border border-white font-bold hover:bg-[#001747] hover:border-[#001747] transition-all"
+              >Login</a
+            >
+          </li>
+          <li>
+            <a href="./sign_up.html"
+              ><button
+                class="bg-[#ff6395] px-5 py-2 rounded-2xl text-white font-bold hover:bg-[#001747] transition-all"
+              >
+                Sign up
+              </button></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main
+      class="flex flex-col md:flex-row justify-between items-center px-6 py-10 md:px-12 h-[80vh]"
+    >
+      <div class="flex flex-col md:ml-10 mb-10 md:mb-0">
+        <p class="text-6xl text-white font-medium py-2">
+          My First<br />Web Project
+        </p>
+        <p class="text-6xl text-white font-medium py-2">
+          Modern Authentication<br />Web Platform
+        </p>
+
+        <div class="py-3 flex gap-5">
+          <a href="./sign_up.html">
+            <button
+              class="bg-[#ff6395] px-5 py-2 rounded-2xl text-white font-bold hover:bg-[#001747] transition-all"
+            >
+              Sign up
+            </button>
+          </a>
+          <a href="./login.html">
+            <button
+              class="px-5 py-2 rounded-2xl text-white border border-white font-bold hover:bg-[#001747] transition-all"
+            >
+              Login
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <img
+          src="../images/authentication 1.png"
+          class="w-full max-w-md"
+        />
+      </div>
+    </main>
+
+    <footer
+      class="mt-28 text-center text-sm text-white/50 py-8 border-t border-white/10"
+    >
+      © 2025
+      <span class="font-semibold text-white/70"
+        >Modern Authentication Web Platform</span
+      >. All rights reserved
+    </footer>
+  </body>
+</html>
