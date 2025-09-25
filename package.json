@@ -1,6 +1,25 @@
 {
   "dependencies": {
     "@tailwindcss/cli": "^4.1.7",
+    "firebase": "^12.3.0",
     "tailwindcss": "^4.1.7"
-  }
+  },
+  "name": "mubeen_modernauth_tailwind_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mubeen207/Mubeen_ModernAuth_Tailwind_2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mubeen207/Mubeen_ModernAuth_Tailwind_2/issues"
+  },
+  "homepage": "https://github.com/Mubeen207/Mubeen_ModernAuth_Tailwind_2#readme"
 }

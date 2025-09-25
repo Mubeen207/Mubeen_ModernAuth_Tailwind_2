@@ -23,8 +23,11 @@
 //     },
 //   },
 // });
+import { initializeApp } from "firebase/app";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
-let firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyBwqkKTba4L88W-vZf1NAEuL0DWkSJx8eM",
   authDomain: "modren-wep-athuntication.firebaseapp.com",
   projectId: "modren-wep-athuntication",
@@ -33,16 +36,18 @@ let firebaseConfig = {
   appId: "1:870976969919:web:40e1379c6f8c31b6a63a0a",
   measurementId: "G-9Z5XLW849D",
 };
-firebase.initializeApp(firebaseConfig);
 
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
 let email = document.getElementById("email");
 let password = document.getElementById("password");
-let fb = firebase.auth();
+// let fb = firebase.auth();
 
 function signUp() {
   console.log("Hello signup");
-
-  fb.createUserWithEmailAndPassword(email.value, password.value)
+  console.log(email.value, password.value);
+  createUserWithEmailAndPassword(email.value, password.value)
     .then((userCredential) => {
       let user = userCredential.user;
       console.log("Hello Done");
