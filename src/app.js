@@ -23,42 +23,50 @@
 //     },
 //   },
 // });
-import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+// import { initializeApp } from "firebase/app";
+// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+// import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBwqkKTba4L88W-vZf1NAEuL0DWkSJx8eM",
-  authDomain: "modren-wep-athuntication.firebaseapp.com",
-  projectId: "modren-wep-athuntication",
-  storageBucket: "modren-wep-athuntication.firebasestorage.app",
-  messagingSenderId: "870976969919",
-  appId: "1:870976969919:web:40e1379c6f8c31b6a63a0a",
-  measurementId: "G-9Z5XLW849D",
+  apiKey: "AIzaSyBtfJY6eWzgOptzBTYUkW05p7f8Ou3cOnI",
+  authDomain: "cd-first-project-15d4e.firebaseapp.com",
+  projectId: "cd-first-project-15d4e",
+  storageBucket: "cd-first-project-15d4e.firebasestorage.app",
+  messagingSenderId: "221789667167",
+  appId: "1:221789667167:web:e354f7017366b11ddd80ea",
+  measurementId: "G-H37P36CTFD",
 };
+firebase.initializeApp(firebaseConfig);
+let fb = firebase.auth();
+const db = firebase.firestore();
+let emailEl = document.getElementById("email");
+let passwordEl = document.getElementById("password");
+// let message = document.getElementById("message");
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
-let email = document.getElementById("email");
-let password = document.getElementById("password");
-// let fb = firebase.auth();
-
+// Authentication
 function signUp() {
-  console.log("Hello signup");
-  console.log(email.value, password.value);
-  createUserWithEmailAndPassword(email.value, password.value)
+  fb.createUserWithEmailAndPassword(emailEl.value, passwordEl.value)
     .then((userCredential) => {
-      let user = userCredential.user;
-      console.log("Hello Done");
-      redirectDashboard();
+      var user = userCredential.user;
+      console.log("Sign up Successful");
     })
     .catch((error) => {
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      console.log("Hello");
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      console.log(errorCode + " " + errorMessage);
     });
 }
-function redirectDashboard() {
-  window.location.href = "./Dashboard.html";
+
+function signIn() {
+  fb.signInWithEmailAndPassword(emailEl.value, passwordEl.value)
+    .then((userCredential) => {
+      var user = userCredential.user;
+      console.log("Sign up Successful");
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode + " " + errorMessage);
+    });
 }
